@@ -1,0 +1,42 @@
+contact = {}
+print('#####CONTACT BOOK#####')
+def add_contact(name,number):
+    contact[name] = number
+    print('contact added succesfully')
+def search_contact(name):
+    if name in contact:
+        print(f'{name} : {number}')
+def delete_contact(name):
+    if name in contact:
+        del contact[name]
+def all_contact():
+    if  not  contact:
+        print('Not contact found')
+    else:
+        for name, number in contact.items():
+            print(f'{name} : {number}')
+
+while True:
+    print('Choose the options')
+    print('1 : Add_contact')
+    print('2 : Search_contact')
+    print('3: Delete_contact')
+    print('4: All_contact')
+    print('5 : Exit')
+    choose = input('choose an option : ')
+    if choose =='1':
+        name = input('enter name : ')
+        number = input('enter number : ')
+        add_contact(name, number)
+    elif choose =='2':
+        name = input('enter name : ')
+        search_contact(name)
+    elif choose =='3':
+        name = input('enter name : ')
+        delete_contact(name)
+    elif choose =='4':
+        all_contact()
+    elif choose =='5':
+        break
+    else:
+        print('invalide choose')
